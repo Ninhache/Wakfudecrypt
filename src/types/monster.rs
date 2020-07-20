@@ -22,6 +22,8 @@ pub struct Monster {
     pub base_will: i32,
     pub base_critical_hit: i32,
     pub base_time_before_death: i32,
+    pub _17: i32,
+    pub _18: i32,
     pub hp_inc: f32,
     pub wp_inc: f32,
     pub ap_inc: f32,
@@ -32,6 +34,8 @@ pub struct Monster {
     pub parade_inc: f32,
     pub will_inc: f32,
     pub critical_hit_inc: f32,
+    pub _29: f32,
+    pub _30: f32,
     pub base_healing_bonus: i32,
     pub base_summon_bonus: i32,
     pub base_mechanics_bonus: i32,
@@ -91,7 +95,7 @@ pub struct Monster {
     pub special_gfx_anim: Vec<MonsterSpecialGfxAnim>,
     pub gfx: i32,
     pub timeline_gfx: i32,
-    pub _86: String,
+    pub _90: String,
 }
 
 impl BinaryData for Monster {
@@ -119,6 +123,8 @@ impl Decode for Monster {
         let base_will = state.decode()?;
         let base_critical_hit = state.decode()?;
         let base_time_before_death = state.decode()?;
+        let _17 = state.decode()?;
+        let _18 = state.decode()?;
         let hp_inc = state.decode()?;
         let wp_inc = state.decode()?;
         let ap_inc = state.decode()?;
@@ -129,6 +135,8 @@ impl Decode for Monster {
         let parade_inc = state.decode()?;
         let will_inc = state.decode()?;
         let critical_hit_inc = state.decode()?;
+        let _29 = state.decode()?;
+        let _30 = state.decode()?;
         let base_healing_bonus = state.decode()?;
         let base_summon_bonus = state.decode()?;
         let base_mechanics_bonus = state.decode()?;
@@ -188,8 +196,8 @@ impl Decode for Monster {
         let special_gfx_anim = state.decode()?;
         let gfx = state.decode()?;
         let timeline_gfx = state.decode()?;
-        let _86 = state.decode()?;
-        Ok(Monster{ id, family_id, level_min, level_max, xp_multiplicator, arcade_points_multiplicator, base_hp, base_wp, base_ap, base_mp, base_range, base_init, base_perception, base_parade, base_will, base_critical_hit, base_time_before_death, hp_inc, wp_inc, ap_inc, mp_inc, range_inc, init_inc, perception_inc, parade_inc, will_inc, critical_hit_inc, base_healing_bonus, base_summon_bonus, base_mechanics_bonus, base_tackle_bonus, base_fire_damage_bonus, base_water_damage_bonus, base_earth_damage_bonus, base_wind_damage_bonus, base_fire_resistance, base_water_resistance, base_earth_resistance, base_wind_resistance, base_tackle_resistance, base_a_p_loss_resistance, base_p_m_loss_resistance, base_w_p_loss_resistance, healing_bonus_inc, tackle_bonus_inc, fire_damage_bonus_inc, water_damage_bonus_inc, earth_damage_bonus_inc, wind_damage_bonus_inc, fire_resistance_inc, water_resistance_inc, earth_resistance_inc, wind_resistance_inc, tackle_resistance_inc, ap_loss_resistance_inc, pm_loss_resistance_inc, wp_loss_resistance_inc, has_dead_evolution, npc_rank, agro_radius, sight_radius, radius_size, fight_properties, world_properties, natural_states, spells_id_and_level, family_rank, walking_speed, running_speed, running_radius_in_world, running_radius_in_fight, monster_action_data, monster_collect_action_data, monster_behaviour_data, monster_evolution_data, required_leadership_points, alignment_id, timeline_buff_id, monster_height, defeat_script_id, gfx_equipment, special_gfx_equipement, special_gfx_color, special_gfx_anim, gfx, timeline_gfx, _86 })
+        let _90 = state.decode()?;
+        Ok(Monster{ id, family_id, level_min, level_max, xp_multiplicator, arcade_points_multiplicator, base_hp, base_wp, base_ap, base_mp, base_range, base_init, base_perception, base_parade, base_will, base_critical_hit, base_time_before_death, _17, _18, hp_inc, wp_inc, ap_inc, mp_inc, range_inc, init_inc, perception_inc, parade_inc, will_inc, critical_hit_inc, _29, _30, base_healing_bonus, base_summon_bonus, base_mechanics_bonus, base_tackle_bonus, base_fire_damage_bonus, base_water_damage_bonus, base_earth_damage_bonus, base_wind_damage_bonus, base_fire_resistance, base_water_resistance, base_earth_resistance, base_wind_resistance, base_tackle_resistance, base_a_p_loss_resistance, base_p_m_loss_resistance, base_w_p_loss_resistance, healing_bonus_inc, tackle_bonus_inc, fire_damage_bonus_inc, water_damage_bonus_inc, earth_damage_bonus_inc, wind_damage_bonus_inc, fire_resistance_inc, water_resistance_inc, earth_resistance_inc, wind_resistance_inc, tackle_resistance_inc, ap_loss_resistance_inc, pm_loss_resistance_inc, wp_loss_resistance_inc, has_dead_evolution, npc_rank, agro_radius, sight_radius, radius_size, fight_properties, world_properties, natural_states, spells_id_and_level, family_rank, walking_speed, running_speed, running_radius_in_world, running_radius_in_fight, monster_action_data, monster_collect_action_data, monster_behaviour_data, monster_evolution_data, required_leadership_points, alignment_id, timeline_buff_id, monster_height, defeat_script_id, gfx_equipment, special_gfx_equipement, special_gfx_color, special_gfx_anim, gfx, timeline_gfx, _90 })
     }
 }
 
