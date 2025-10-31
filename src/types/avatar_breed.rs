@@ -21,9 +21,13 @@ pub struct AvatarBreed {
     pub base_prospection: i32,
     pub timer_count_before_death: i32,
     pub prefered_area: i32,
+    pub _17: i32, // todo: peut-être seveur
+    pub _18: i32, // todo: peut-être seveur
+    pub _19: i32, // todo: peut-être seveur
+
     pub spell_elements: Vec<i8>,
     pub charac_ratios: Vec<f32>,
-    pub _18: Vec<i16>,
+    pub _22: Vec<i16>,
 }
 
 impl BinaryData for AvatarBreed {
@@ -50,10 +54,15 @@ impl Decode for AvatarBreed {
         let base_prospection = state.decode()?;
         let timer_count_before_death = state.decode()?;
         let prefered_area = state.decode()?;
+        let _17 = state.decode()?;
+        let _18 = state.decode()?;
+        let _19 = state.decode()?;
         let spell_elements = state.decode()?;
         let charac_ratios = state.decode()?;
-        let _18 = state.decode()?;
-        Ok(AvatarBreed{ id, name, background_aps, base_hp, base_ap, base_mp, base_wp, base_init, base_ferocity, base_fumble, base_wisdom, base_tackle, base_dodge, base_prospection, timer_count_before_death, prefered_area, spell_elements, charac_ratios, _18 })
+        let _22 = state.decode()?;
+
+        // let _18 = state.decode()?;
+        Ok(AvatarBreed{ id, name, background_aps, base_hp, base_ap, base_mp, base_wp, base_init, base_ferocity, base_fumble, base_wisdom, base_tackle, base_dodge, base_prospection, timer_count_before_death, prefered_area, _17, _18, _19, spell_elements, charac_ratios, _22 })
     }
 }
 
